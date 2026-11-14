@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kabirul Ezdani Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE formal, dignified personal site for a senior civil servant
+   IDEA a published service record: one 34-year career drawn as a ruled band
+   PICTURE career timeline 1990–2024 at true scale, coloured by field of service
+   COLOUR white ground, Bangladesh bottle green leads, flag red as the single accent
+   TYPE Source Serif 4 display + Inter text
+   LAYOUT green first band: name and summary across the top, timeline full width beneath; stacked on phone */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b1220);--ink:light-dark(#111827,#e8edf5);--mut:light-dark(#4b5567,#a6b0c2);--line:light-dark(#dde3ec,#232f45);--g:light-dark(#13294b,#0f2140);--gi:#f3f6fb;--red:light-dark(#c8102e,#ff5a6e);--soft:light-dark(#f3f6fb,#121b2d);--c1:#7fb89f;--c2:#e3b23c;--c3:#5f8fd1;--c4:#ffffff}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:0}
+a{color:inherit}
+.band{padding-block:clamp(28px,4vw,64px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+nav{background:var(--g);color:var(--gi);padding:14px max(5vw,16px);position:sticky;top:0;z-index:5;border-bottom:1px solid rgba(255,255,255,.12)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;justify-content:space-between}
+nav b{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:18px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover,nav a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.hero{background:var(--g);color:var(--gi)}
+.top{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.pic{width:100%;height:auto;aspect-ratio:5/7;object-fit:cover;border-radius:4px;display:block;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.08)}
+.hero h1{font-size:clamp(40px,6vw,64px);line-height:1.02;text-wrap:balance}
+.role{font-size:18px;margin:14px 0 0;opacity:.92}
+.role span{display:block}
+.about{margin:0;font-size:17px;line-height:1.65;opacity:.9;max-width:62ch}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:4px;border:1px solid rgba(255,255,255,.45);text-decoration:none;font-weight:500;font-size:15px;white-space:nowrap}
+.btn.p{background:#fff;color:#13294b;border-color:#fff}
+.btn:hover,.btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:18px;margin:clamp(28px,4vw,48px) 0 26px;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
+.stats div{font-size:14px;opacity:.9}
+.stats strong{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(30px,4vw,42px);font-weight:600;line-height:1;margin-bottom:6px;opacity:1}
+.tl{position:relative;padding-top:6px}
+.track{position:relative;height:64px;background:rgba(255,255,255,.06);border-radius:3px}
+.seg{position:absolute;top:0;bottom:0;border-right:2px solid var(--g)}
+.seg i{position:absolute;inset:0;background:var(--c);transform-origin:left;animation:grow .9s ease-out both}
+.seg.now::after{content:"";position:absolute;right:-6px;top:-8px;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--g)}
+@keyframes grow{from{transform:scaleX(0)}}
+@media(prefers-reduced-motion:reduce){.seg i{animation:none}}
+.ticks{position:relative;height:26px;font-size:13px;opacity:.8;font-variant-numeric:tabular-nums}
+.ticks span{position:absolute;top:6px;transform:translateX(-50%)}
+.ticks span::before{content:"";position:absolute;left:50%;top:-10px;height:6px;border-left:1px solid rgba(255,255,255,.5)}
+.key{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 22px;margin-top:16px;font-size:14px}
+.key div{border-top:4px solid var(--c);padding-top:8px}
+.key b{display:block;font-weight:600;font-size:15px}
+.key small{font-size:13px;opacity:.8}
+section h2{font-size:clamp(32px,4vw,44px)}
+.sh{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:clamp(20px,4vw,64px);border-top:1px solid var(--line);padding-top:clamp(24px,3vw,40px)}
+.sh>p{margin:10px 0 0;color:var(--mut);font-size:15px}
+.jobs{list-style:none;margin:0;padding:0}
+.job{display:grid;grid-template-columns:11.5em minmax(0,1fr);gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.job:first-child{padding-top:0}
+.when{font-family:"Source Serif 4",Georgia,serif;font-size:18px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--g)}
+:root[data-theme=dark] .when{color:#7cc4f5}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .when{color:#7cc4f5}}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:8px;vertical-align:1px}
+.job h3{font-size:22px}
+.org{margin:4px 0 0;color:var(--mut);font-size:15px}
+.job ul{margin:10px 0 0;padding-left:18px}
+.job li{margin:4px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:12px}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:16px 18px;font-weight:500}
+.card small{display:block;font-weight:400;color:var(--mut);font-size:14px;margin-top:2px}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,56px)}
+.places{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.places li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;white-space:nowrap}
+.places li b{color:var(--red);font-weight:600}
+.teach{columns:2 14em;column-gap:28px;margin:0;padding:0;list-style:none}
+.teach li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--line)}
+.edu{width:100%;border-collapse:collapse}
+.edu td{padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.edu td:first-child{font-family:"Source Serif 4",Georgia,serif;font-size:22px;font-weight:600;color:var(--red);width:4.5em;font-variant-numeric:tabular-nums}
+.edu b{display:block;font-size:17px}
+.edu span{color:var(--mut);font-size:15px}
+.edu em{font-style:normal;color:var(--ink);font-weight:500}
+footer{background:var(--g);color:var(--gi)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end}
+footer h2{font-size:clamp(32px,4vw,44px)}
+footer p{margin:10px 0 0;opacity:.88}
+footer dl{margin:0;display:grid;grid-template-columns:auto auto;gap:6px 18px;font-size:16px}
+footer dt{opacity:.75}
+footer dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+.fine{font-size:13px;opacity:.7;margin-top:28px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+@media(max-width:900px){.top{grid-template-columns:170px minmax(0,1fr);align-items:end}.top .about{grid-column:1/-1}.key{grid-template-columns:repeat(2,minmax(0,1fr))}.sh,.two{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){nav ul{display:none}.top{grid-template-columns:minmax(0,1fr)}.pic{width:150px}.track{height:44px}.ticks span:nth-child(even){display:none}.job{grid-template-columns:minmax(0,1fr);gap:4px}.when{font-size:17px}footer .wrap{grid-template-columns:minmax(0,1fr)}.edu td:first-child{width:3.6em;font-size:18px}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="wrap">
+  <b>Kabirul Ezdani Khan</b>
+  <ul>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#boards">Boards</a></li>
+    <li><a href="#training">Training &amp; teaching</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero band"><div class="wrap">
+  <div class="top">
+    <img class="pic" src="portrait.jpg" alt="Portrait of Kabirul Ezdani Khan" width="450" height="630">
+    <div>
+      <h1>Kabirul Ezdani Khan</h1>
+      <p class="role"><span>Senior Consultant, SPFMS</span><span>Additional Secretary, Grade-1 (Retd.)</span></p>
+      <div class="btns">
+        <a class="btn p" href="mailto:khankabirul64@gmail.com">khankabirul64@gmail.com</a>
+        <a class="btn" href="tel:+8801924774909">+880 1924 774909</a>
+      </div>
+    </div>
+    <p class="about">A seasoned public servant with over 30 years of experience in public administration, taxation and finance, holding key leadership roles in the Bangladesh Civil Service. His career spans revenue collection, public financial management, international relations and pension reform. With a strong foundation in national and international economic policy, he has led critical government projects and negotiations that drove lasting reform, and remains committed to public sector efficiency and economic growth through sustainable policy.</p>
+  </div>
+
+  <div class="stats">
+    <div><strong>35+ yrs</strong>in public service since 1990</div>
+    <div><strong>7</strong>former board seats</div>
+    <div><strong>10</strong>teaching institutions</div>
+    <div><strong>2</strong>master's degrees, UK and Dhaka</div>
+  </div>
+
+  <div class="tl" aria-label="Career timeline, 1990 to present">
+    <div class="track" id="track"></div>
+    <div class="ticks" id="ticks"></div>
+    <div class="key" id="key"></div>
+  </div>
+</div></header>
+
+<main>
+<section class="band" id="career"><div class="wrap sh">
+  <div><h2>Professional experience</h2><p>Most recent first. Colours match the timeline above.</p></div>
+  <ol class="jobs" id="jobs"></ol>
+</div></section>
+
+<section class="band" id="boards" style="padding-top:0"><div class="wrap sh">
+  <div><h2>Former board member</h2><p>Boards of state corporations, financial institutions and academic bodies.</p></div>
+  <div class="cards" id="cards"></div>
+</div></section>
+
+<section class="band" id="training" style="padding-top:0"><div class="wrap sh">
+  <div><h2>Training &amp; teaching</h2><p>Programmes at home and abroad, and classes taught across Bangladesh.</p></div>
+  <div class="two">
+    <div>
+      <h3 style="font-size:22px">Training, foreign and local</h3>
+      <p>Participated in many training programmes as part of official assignments, notably two programmes at the Internal Revenue Service headquarters in Washington, D.C. and at the Public Administration Center in The Hague. He also attended basic taxation training at the Malaysian Tax Academy, Kuala Lumpur, and training on international tax treaties at the OECD Training Centre in Ankara.</p>
+      <p>He visited Vietnam and Australia with the Senior Staff Course and the Policy Planning and Management Course of the Bangladesh Public Administration Training Centre, and travelled with the National Board of Revenue team to Australia, Singapore, Kenya and Uganda for experience-sharing meetings with their revenue authorities.</p>
+      <ul class="places" id="places"></ul>
+    </div>
+    <div>
+      <h3 style="font-size:22px;margin-bottom:8px">Teaching experience</h3>
+      <ul class="teach" id="teach"></ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="education" style="padding-top:0"><div class="wrap sh">
+  <div><h2>Education</h2><p>From Dhanmondi to Northern Ireland.</p></div>
+  <table class="edu"><tbody id="edu"></tbody></table>
+</div></section>
+</main>
+
+<footer class="band" id="contact"><div class="wrap">
+  <div>
+    <h2>Get in touch</h2>
+    <p>For board, advisory, teaching or speaking enquiries.</p>
+  </div>
+  <dl>
+    <dt>Email</dt><dd><a href="mailto:khankabirul64@gmail.com">khankabirul64@gmail.com</a></dd>
+    <dt>Phone</dt><dd><a href="tel:+8801924774909">+880 1924 774909</a></dd>
+    <dt>Based in</dt><dd>Dhaka, Bangladesh</dd>
+  </dl>
+  <div class="fine" style="grid-column:1/-1">Kabirul Ezdani Khan · Updated November 2026</div>
+</div></footer>
+
+<script>
+{
+const F={
+  e:{n:"Early career",d:"BIISS, BEPZA",c:"#a9b4c8"},
+  t:{n:"Taxation & revenue",d:"Tax cadre, NBR",c:"#f29b7f"},
+  f:{n:"Foreign affairs & diplomacy",d:"MOFA, High Commission",c:"#7cc4f5"},
+  m:{n:"Ministry of Finance",d:"Finance Division, NPA",c:"#b9e3c6"}
+};
+const J=[
+ {t:"Director",o:"Agrani Bank PLC",p:"Dhaka",w:"Current",a:0,b:0,f:"m",x:[]},
+ {t:"Senior Consultant",o:"Strengthening Public Financial Management Systems (SPFMS) programme, Finance Division, Ministry of Finance",p:"Dhaka",w:"Mar 2025 – Present",a:2025.15,b:2026.9,f:"m",x:[]},
+ {t:"Executive Chairman",o:"National Pension Authority, Finance Division, Ministry of Finance",p:"Dhaka",w:"Nov 2023 – Nov 2024",a:2023.85,b:2024.85,f:"m",x:["Led the National Pension Authority to ensure sustainable and efficient pension management for public servants.","Oversaw strategic decision-making for pension fund allocation and growth.","Developed guidelines and policies to strengthen pension-related activities."]},
+ {t:"Additional Secretary",o:"Budget & Expenditure Management Wing, Finance Division, Ministry of Finance",p:"Dhaka",w:"May 2019 – Nov 2023",a:2019.35,b:2023.85,f:"m",x:["Headed the “Internal Audit in the Public Sector” project under the World Bank-funded SPFMS (Strengthening Public Financial Management Systems) programme.","Designed and published the first-ever Risk-Based Internal Audit Charter and Manual for the public sector.","Provided oversight and leadership for public expenditure management and budgeting."]},
+ {t:"Joint Secretary",o:"Expenditure Management Wing, Finance Division, Ministry of Finance",p:"Dhaka",w:"Jun 2015 – May 2019",a:2015.45,b:2019.35,f:"m",x:["Rationalised and approved the creation of new posts, upgrading of roles and inclusion of new vehicles in the government organogram.","Authored an instructional handbook on expenditure management used to train new government officers.","Facilitated the effective allocation and management of public sector financial resources."]},
+ {t:"Deputy Secretary",o:"Finance Division, Ministry of Finance",p:"Dhaka",w:"May 2012 – Jun 2015",a:2012.35,b:2015.45,f:"m",x:["Played a key role in overseeing government expenditure and rationalising financial allocations for ministries.","Supervised key functions in public financial management, including tax collection and personnel management."]},
+ {t:"First Secretary",o:"National Board of Revenue",p:"Dhaka",w:"2009 – 2012",a:2009,b:2012.35,f:"t",x:["Supervised human resource management, training and income tax collection across different tax zones.","Played a crucial role as member secretary in organising the country’s first-ever Income Tax Fair.","Served as Deputy Project Director of the DFID-funded Tax Administration Capacity and Taxpayer Service (TACTS) project."]},
+ {t:"Counsellor",o:"Bangladesh High Commission",p:"Malaysia & Singapore",w:"2004 – 2009",a:2004,b:2009,f:"f",x:["Represented Bangladesh in diplomatic negotiations, promoting economic cooperation and investment opportunities.","Served as Director of Agrani Remittance House, enhancing remittance flows to Bangladesh."]},
+ {t:"Senior Assistant Secretary",o:"South-East Asia Wing, Ministry of Foreign Affairs",p:"Dhaka",w:"2002 – 2004",a:2002,b:2004,f:"f",x:["Led the Bangladesh team in international economic and trade negotiations, focusing on bilateral and multilateral agreements.","Provided strategic advice on South-East Asian bilateral relations and economic cooperation initiatives."]},
+ {t:"Director",o:"Multilateral Economic Affairs Wing, Ministry of Foreign Affairs",p:"Dhaka",w:"2002 – 2004",a:2002,b:2004,f:"f",x:["Led economic and trade negotiations on bilateral and multilateral agreements to strengthen Bangladesh’s international economic ties.","Managed joint economic commissions, promoting trade, investment and economic cooperation with partner countries."]},
+ {t:"Assistant Commissioner of Taxes",o:"Bangladesh Civil Service (Taxation) Cadre",p:"Dhaka",w:"1991 – 2001",a:1991,b:2001,f:"t",x:["Worked in key tax administration roles, including the Large Taxpayer Unit, assessing and collecting taxes from major revenue-generating companies.","Represented Bangladesh in negotiating Avoidance of Double Taxation Agreements with multiple countries."]},
+ {t:"Assistant Manager",o:"Bangladesh Export Processing Zones Authority (BEPZA), Prime Minister’s Office",p:"Dhaka",w:"1990 – 1991",a:1990.4,b:1991,f:"e",x:["Promoted BEPZA incentives to attract local and foreign investors, increasing investment in Export Processing Zones.","Presented EPZ success stories at seminars, boosting investor awareness and engagement."]},
+ {t:"Research Associate",o:"Bangladesh Institute of International and Strategic Studies (BIISS)",p:"Dhaka",w:"1990",a:1990,b:1990.4,f:"e",x:["Authored reports and articles on political and economic issues, contributing to government policymaking discussions."]}
+];
+const S=1990,E=2027,pc=y=>((y-S)/(E-S)*100).toFixed(2)+"%";
+const runs=[[1990,1991,"e"],[1991,2001,"t"],[2002,2009,"f"],[2009,2012.35,"t"],[2012.35,2024.85,"m"],[2025.15,2026.9,"m"]];
+document.getElementById("track").innerHTML=runs.map((r,i)=>`<div class="seg${i==runs.length-1?" now":""}" style="left:${pc(r[0])};width:calc(${pc(r[1])} - ${pc(r[0])});--c:${F[r[2]].c}" title="${F[r[2]].n}"><i style="animation-delay:${i*.12}s"></i></div>`).join("");
+document.getElementById("ticks").innerHTML=[1990,1995,2000,2005,2010,2015,2020,2025].map(y=>`<span style="left:${pc(y)}">${y}</span>`).join("");
+const yrs=k=>runs.filter(r=>r[2]==k).map(r=>Math.floor(r[0])+"–"+(r[1]>2026?"present":Math.floor(r[1]))).join(", ");
+document.getElementById("key").innerHTML=Object.keys(F).map(k=>`<div style="--c:${F[k].c}"><b>${F[k].n}</b><small>${yrs(k)} · ${F[k].d}</small></div>`).join("");
+document.getElementById("jobs").innerHTML=J.map(j=>`<li class="job"><div class="when">${j.w}</div><div><h3>${j.t}</h3><p class="org"><span class="dot" style="--c:${F[j.f].c}"></span>${j.o} · ${j.p}</p>${j.x.length?`<ul>${j.x.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}</div></li>`).join("");
+const B=[["Bangladesh Agricultural Development Corporation","BADC"],["Bangladesh Fisheries Development Corporation","BFDC"],["Padma Oil Company Ltd",""],["Bangladesh Services Limited","Owner of the InterContinental Hotel"],["Military Institute of Science and Technology","MIST"],["Institute of Public Finance","Executive Chairman · Finance Division"],["Prabashi Kallyan Bank Limited",""]];
+document.getElementById("cards").innerHTML=B.map(b=>`<div class="card">${b[0]}${b[1]?`<small>${b[1]}</small>`:""}</div>`).join("");
+const P=[["Washington, D.C.","IRS HQ"],["The Hague","Public Administration Center"],["Kuala Lumpur","Malaysian Tax Academy"],["Ankara","OECD Training Centre"],["Vietnam","BPATC course"],["Australia","BPATC & NBR"],["Singapore","NBR"],["Kenya","NBR"],["Uganda","NBR"]];
+document.getElementById("places").innerHTML=P.map(p=>`<li><b>${p[0]}</b> · ${p[1]}</li>`).join("");
+const T=["Institute of Public Finance, Finance Division","BPATC, Savar","Department of Banking & Insurance, University of Dhaka","BIAM, Dhaka","Admin Academy, Shahbag, Dhaka","BCS Tax Academy, Dhaka","Foreign Service Academy, Dhaka","T & T Academy, Gazipur","Samabay Academy, Comilla","Land Training Institute, Nilkhet, Dhaka"];
+document.getElementById("teach").innerHTML=T.map(t=>`<li>${t}</li>`).join("");
+const D=[[1999,"Master of Arts in Government Financial Management","University of Ulster · Northern Ireland, UK",""],[1989,"Master of Social Science in Public Administration","University of Dhaka","Second Class First"],[1986,"Bachelor of Social Science in Public Administration","University of Dhaka","First Class Fourth"],[1982,"HSC, Humanities Group","Dhaka Residential Model College","First Division"],[1980,"SSC, Humanities Group","Dhanmondi Boys High School","Second Division"]];
+document.getElementById("edu").innerHTML=D.map(d=>`<tr><td>${d[0]}</td><td><b>${d[1]}</b><span>${d[2]}${d[3]?` · <em>${d[3]}</em>`:""}</span></td></tr>`).join("");
+}
+</script>
+</body>
+</html>
