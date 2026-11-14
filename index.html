@@ -96,7 +96,7 @@ footer dt{opacity:.75}
 footer dd{margin:0;font-weight:500;overflow-wrap:anywhere}
 .fine{font-size:13px;opacity:.7;margin-top:28px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
 @media(max-width:900px){.top{grid-template-columns:170px minmax(0,1fr);align-items:end}.top .about{grid-column:1/-1}.key{grid-template-columns:repeat(2,minmax(0,1fr))}.sh,.two{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:600px){nav ul{display:none}.top{grid-template-columns:minmax(0,1fr)}.pic{width:150px}.track{height:44px}.ticks span:nth-child(even){display:none}.job{grid-template-columns:minmax(0,1fr);gap:4px}.when{font-size:17px}footer .wrap{grid-template-columns:minmax(0,1fr)}.edu td:first-child{width:3.6em;font-size:18px}}
+@media(max-width:600px){nav{padding-block:10px 4px}nav .wrap{display:block}nav ul{gap:0 20px;margin-top:2px}nav li{white-space:nowrap;flex-shrink:0}nav a{display:inline-block;padding:9px 0;opacity:1}.top{grid-template-columns:minmax(0,1fr)}.pic{width:150px}.track{height:44px}.ticks span:nth-child(even){display:none}.job{grid-template-columns:minmax(0,1fr);gap:4px}.when{font-size:17px}footer .wrap{grid-template-columns:minmax(0,1fr)}.edu td:first-child{width:3.6em;font-size:18px}}
 </style>
 </head>
 <body>
@@ -141,7 +141,7 @@ footer dd{margin:0;font-weight:500;overflow-wrap:anywhere}
 
 <main>
 <section class="band" id="career"><div class="wrap sh">
-  <div><h2>Professional experience</h2><p>Most recent first. Colours match the timeline above.</p></div>
+  <div><h2>Professional experience</h2></div>
   <ol class="jobs" id="jobs"></ol>
 </div></section>
 
@@ -194,8 +194,8 @@ const F={
   m:{n:"Ministry of Finance",d:"Finance Division, NPA",c:"#b9e3c6"}
 };
 const J=[
- {t:"Director",o:"Agrani Bank PLC",p:"Dhaka",w:"Current",a:0,b:0,f:"m",x:[]},
  {t:"Senior Consultant",o:"Strengthening Public Financial Management Systems (SPFMS) programme, Finance Division, Ministry of Finance",p:"Dhaka",w:"Mar 2025 – Present",a:2025.15,b:2026.9,f:"m",x:[]},
+ {t:"Director",o:"Agrani Bank PLC",p:"Dhaka",w:"Nov 2024 – Aug 2026",a:2024.85,b:2026.6,f:"m",x:[]},
  {t:"Executive Chairman",o:"National Pension Authority, Finance Division, Ministry of Finance",p:"Dhaka",w:"Nov 2023 – Nov 2024",a:2023.85,b:2024.85,f:"m",x:["Led the National Pension Authority to ensure sustainable and efficient pension management for public servants.","Oversaw strategic decision-making for pension fund allocation and growth.","Developed guidelines and policies to strengthen pension-related activities."]},
  {t:"Additional Secretary",o:"Budget & Expenditure Management Wing, Finance Division, Ministry of Finance",p:"Dhaka",w:"May 2019 – Nov 2023",a:2019.35,b:2023.85,f:"m",x:["Headed the “Internal Audit in the Public Sector” project under the World Bank-funded SPFMS (Strengthening Public Financial Management Systems) programme.","Designed and published the first-ever Risk-Based Internal Audit Charter and Manual for the public sector.","Provided oversight and leadership for public expenditure management and budgeting."]},
  {t:"Joint Secretary",o:"Expenditure Management Wing, Finance Division, Ministry of Finance",p:"Dhaka",w:"Jun 2015 – May 2019",a:2015.45,b:2019.35,f:"m",x:["Rationalised and approved the creation of new posts, upgrading of roles and inclusion of new vehicles in the government organogram.","Authored an instructional handbook on expenditure management used to train new government officers.","Facilitated the effective allocation and management of public sector financial resources."]},
@@ -204,12 +204,12 @@ const J=[
  {t:"Counsellor",o:"Bangladesh High Commission",p:"Malaysia & Singapore",w:"2004 – 2009",a:2004,b:2009,f:"f",x:["Represented Bangladesh in diplomatic negotiations, promoting economic cooperation and investment opportunities.","Served as Director of Agrani Remittance House, enhancing remittance flows to Bangladesh."]},
  {t:"Senior Assistant Secretary",o:"South-East Asia Wing, Ministry of Foreign Affairs",p:"Dhaka",w:"2002 – 2004",a:2002,b:2004,f:"f",x:["Led the Bangladesh team in international economic and trade negotiations, focusing on bilateral and multilateral agreements.","Provided strategic advice on South-East Asian bilateral relations and economic cooperation initiatives."]},
  {t:"Director",o:"Multilateral Economic Affairs Wing, Ministry of Foreign Affairs",p:"Dhaka",w:"2002 – 2004",a:2002,b:2004,f:"f",x:["Led economic and trade negotiations on bilateral and multilateral agreements to strengthen Bangladesh’s international economic ties.","Managed joint economic commissions, promoting trade, investment and economic cooperation with partner countries."]},
- {t:"Assistant Commissioner of Taxes",o:"Bangladesh Civil Service (Taxation) Cadre",p:"Dhaka",w:"1991 – 2001",a:1991,b:2001,f:"t",x:["Worked in key tax administration roles, including the Large Taxpayer Unit, assessing and collecting taxes from major revenue-generating companies.","Represented Bangladesh in negotiating Avoidance of Double Taxation Agreements with multiple countries."]},
+ {t:"Assistant Commissioner of Taxes",o:"Bangladesh Civil Service (Taxation) Cadre",p:"Dhaka",w:"1991 – 2002",a:1991,b:2002,f:"t",x:["Worked in key tax administration roles, including the Large Taxpayer Unit, assessing and collecting taxes from major revenue-generating companies.","Represented Bangladesh in negotiating Avoidance of Double Taxation Agreements with multiple countries."]},
  {t:"Assistant Manager",o:"Bangladesh Export Processing Zones Authority (BEPZA), Prime Minister’s Office",p:"Dhaka",w:"1990 – 1991",a:1990.4,b:1991,f:"e",x:["Promoted BEPZA incentives to attract local and foreign investors, increasing investment in Export Processing Zones.","Presented EPZ success stories at seminars, boosting investor awareness and engagement."]},
  {t:"Research Associate",o:"Bangladesh Institute of International and Strategic Studies (BIISS)",p:"Dhaka",w:"1990",a:1990,b:1990.4,f:"e",x:["Authored reports and articles on political and economic issues, contributing to government policymaking discussions."]}
 ];
 const S=1990,E=2027,pc=y=>((y-S)/(E-S)*100).toFixed(2)+"%";
-const runs=[[1990,1991,"e"],[1991,2001,"t"],[2002,2009,"f"],[2009,2012.35,"t"],[2012.35,2024.85,"m"],[2025.15,2026.9,"m"]];
+const runs=[[1990,1991,"e"],[1991,2002,"t"],[2002,2009,"f"],[2009,2012.35,"t"],[2012.35,2024.85,"m"],[2025.15,2026.9,"m"]];
 document.getElementById("track").innerHTML=runs.map((r,i)=>`<div class="seg${i==runs.length-1?" now":""}" style="left:${pc(r[0])};width:calc(${pc(r[1])} - ${pc(r[0])});--c:${F[r[2]].c}" title="${F[r[2]].n}"><i style="animation-delay:${i*.12}s"></i></div>`).join("");
 document.getElementById("ticks").innerHTML=[1990,1995,2000,2005,2010,2015,2020,2025].map(y=>`<span style="left:${pc(y)}">${y}</span>`).join("");
 const yrs=k=>runs.filter(r=>r[2]==k).map(r=>Math.floor(r[0])+"–"+(r[1]>2026?"present":Math.floor(r[1]))).join(", ");
